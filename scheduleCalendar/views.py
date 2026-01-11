@@ -331,3 +331,19 @@ def review_daily(request, date):
         'date': date,
         'comparisons': comparisons
     })
+
+
+
+
+
+from django.http import HttpResponse
+
+def test(request):
+    return HttpResponse("Render OK")
+
+
+
+
+
+
+

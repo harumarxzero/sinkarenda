@@ -13,4 +13,5 @@ urlpatterns = [
     path("daily_intake_list/", views.daily_intake_list, name="daily_intake_list"),
     path("review_daily/<str:date>/", views.review_daily, name="review_daily"),
     path("daily_intakes/", views.get_daily_intakes, name="get_daily_intakes"),
+    path("test/", views.test),
 ]

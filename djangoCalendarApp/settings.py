@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['sinkarenda-1.onrender.com']
 
 
 # Application definition
@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+
 ]
 
 ROOT_URLCONF = 'djangoCalendarApp.urls'
@@ -76,10 +78,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'djangoCalendarApp.wsgi.application'
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-    )
+    "default": dj_database_url.config(conn_max_age=600)
 }
 
 # Database
