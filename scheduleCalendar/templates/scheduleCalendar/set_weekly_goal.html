@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>週目標設定</title>
+    <link rel="stylesheet" href="{% static 'scheduleCalendar/style.css' %}">
+</head>
+<body>
+    <h1>週目標設定</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">保存</button>
+    </form>
+    <a href="{% url 'cal:weekly_goal_list' %}">目標リストに戻る</a>
+</body>
+</html>

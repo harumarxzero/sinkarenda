@@ -1,0 +1,175 @@
+/* 目に優しいソフトな色調のスタイル */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6e6fa 50%, #fffacd 100%); /* 淡いグラデーション */
+    color: #2f4f4f; /* ダークスレートグレー */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    color: #4682b4; /* スチールブルー */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+a {
+    color: #20b2aa; /* ライトシーグリーン */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #008b8b; /* ダークシーグリーン */
+    text-decoration: underline;
+}
+
+/* フォームスタイル */
+form {
+    background: linear-gradient(45deg, #f5f5f5, #e0ffff, #f0fff0); /* 淡いグラデーション */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #b0c4de; /* ライトスチールブルー */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #696969; /* ディムグレー */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #d3d3d3; /* ライトグレー */
+    border-radius: 8px;
+    background-color: #fafafa; /* 非常に淡いグレー */
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #87ceeb; /* スカイブルー */
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(135,206,235,0.3);
+    outline: none;
+}
+
+/* ボタンスタイル */
+button,
+input[type="submit"] {
+    background: linear-gradient(45deg, #add8e6, #87ceeb, #b0e0e6); /* 淡いブルーグラデーション */
+    color: #2f4f4f;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: linear-gradient(45deg, #87ceeb, #4682b4, #5f9ea0); /* 少し濃いブルー */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* リストスタイル */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: linear-gradient(90deg, #f0fff0, #e0ffff, #fffacd); /* 淡い横グラデーション */
+    margin-bottom: 12px;
+    padding: 18px;
+    border-radius: 10px;
+    border-left: 4px solid #b0c4de;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: scale(1.01);
+}
+
+li a {
+    color: #696969;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* カレンダーコンテナ */
+#calendar {
+    background: linear-gradient(135deg, #fafafa, #f5f5f5, #e6e6fa); /* 非常に淡いグラデーション */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-top: 25px;
+    border: 1px solid #d3d3d3;
+}
+
+/* FullCalendarイベントの文字色を黒く */
+#calendar .fc-event {
+    color: #000 !important;
+    font-weight: bold;
+}
+
+#calendar .fc-event:hover {
+    color: #000 !important;
+}
+
+/* 週合計イベントの特別スタイル */
+#calendar .fc-event.weekly-total {
+    background-color: #ffa500 !important; /* オレンジ */
+    border-color: #ff8c00 !important;
+    color: #000 !important; /* 文字色を黒く */
+}
+
+#calendar .fc-event.weekly-total:hover {
+    background-color: #ff7f00 !important; /* ダークオレンジ */
+    color: #000 !important; /* ホバー時も黒く */
+}
+
+/* ナビゲーションリンク */
+div:first-child {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+div:first-child a {
+    margin: 0 12px;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #e0ffff, #b0e0e6); /* 淡いブルーグリーン */
+    color: #2f4f4f;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+div:first-child a:hover {
+    background: linear-gradient(45deg, #87ceeb, #5f9ea0);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}

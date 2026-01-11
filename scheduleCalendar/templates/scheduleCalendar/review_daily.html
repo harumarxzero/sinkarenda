@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>日次振り返り</title>
+    <link rel="stylesheet" href="{% static 'scheduleCalendar/style.css' %}">
+</head>
+<body>
+    {% load static %}
+    <h1>{{ date|date:"Y年n月j日" }} の振り返り</h1>
+    <ul>
+        {% for comp in comparisons %}
+        <li>
+            {{ comp.name }}: 目標 {{ comp.goal }} 回、摂取 {{ comp.intake }} 回 - {{ comp.status }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cal:daily_intake_list' %}">リストに戻る</a>
+</body>
+</html>

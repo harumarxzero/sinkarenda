@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css">
+    <link rel="stylesheet" href="{% static 'scheduleCalendar/style.css' %}">
+</head>
+
+<body>
+    <div>
+        <a href="{% url 'cal:set_weekly_goal' %}">今週の目標を設定</a> |
+        <a href="{% url 'cal:weekly_goal_list' %}">目標リスト</a> |
+        <a href="{% url 'cal:add_daily_intake' %}">今日の食生活</a> |
+        <a href="{% url 'cal:daily_intake_list' %}">食生活の流れ</a>
+    </div>
+
+    <!-- 今週のフィードバック -->
+    <div style="background-color: #e0ffff; padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #b0e0e6;">
+        <h2 style="color: #4682b4; margin-top: 0;">今週のフィードバック</h2>
+        {% for message in feedback_messages %}
+        <p style="margin: 5px 0; color: #2f4f4f;">{{ message }}</p>
+        {% endfor %}
+    </div>
+
+    <div id='calendar'></div>
+
+    {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+    <script src="{% static 'scheduleCalendar/app.js' %}"></script>
+</body>
+
+</html>

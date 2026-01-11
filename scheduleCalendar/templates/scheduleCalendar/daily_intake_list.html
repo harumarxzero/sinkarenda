@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>食生活の流れ</title>
+    <link rel="stylesheet" href="{% static 'scheduleCalendar/style.css' %}">
+</head>
+<body>
+    <h1>食生活の流れ</h1>
+    <a href="{% url 'cal:add_daily_intake' %}">今日の食生活を登録</a>
+    <ul>
+        {% for intake in intakes %}
+        <li>
+            日付: <a href="{% url 'cal:review_daily' intake.date %}">{{ intake.date|date:"Y年n月j日" }}</a><br>
+            肉: {{ intake.meet_intake }}, 魚: {{ intake.fish_intake }}, 米: {{ intake.rice_intake }}, 野菜: {{ intake.vege_intake }}, 麺: {{ intake.men_intake }}, パン: {{ intake.pan_intake }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cal:index' %}">カレンダーに戻る</a>
+</body>
+</html>

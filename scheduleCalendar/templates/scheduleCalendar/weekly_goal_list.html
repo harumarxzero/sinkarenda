@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>週目標リスト</title>
+    <link rel="stylesheet" href="{% static 'scheduleCalendar/style.css' %}">
+</head>
+<body>
+    <h1>週目標リスト</h1>
+    <a href="{% url 'cal:set_weekly_goal' %}">新しい目標を設定</a>
+    <ul>
+        {% for goal in goals %}
+        <li>
+            週開始日: {{ goal.week_start|date:"Y年n月j日" }}<br>
+            肉: {{ goal.meet_goal }}, 魚: {{ goal.fish_goal }}, 米: {{ goal.rice_goal }}, 野菜: {{ goal.vege_goal }}, 麺: {{ goal.men_goal }}, パン: {{ goal.pan_goal }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cal:index' %}">カレンダーに戻る</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>日次摂取登録</title>
+    <link rel="stylesheet" href="{% static 'scheduleCalendar/style.css' %}">
+</head>
+<body>
+    <h1>日次摂取登録</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">保存</button>
+    </form>
+    <a href="{% url 'cal:daily_intake_list' %}">摂取リストに戻る</a>
+</body>
+</html>
